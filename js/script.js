@@ -157,9 +157,11 @@ var App = function() {
 			calcular();
 		});
 
-		$('#btn-enviar-correo').on('click', function() {
+		$('form').on('submit', function(ev) {
+			ev.preventDefault();
+
 			$.post('http://adevelca.com/enviar-correo', {email: $('#email-enviar').val(), nombre: $('#presupuesto-guardar').val(), monto: $('#total').val()}, function(html) {
-				
+
 			});
 		});
 	};
