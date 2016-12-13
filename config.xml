@@ -5,8 +5,6 @@
         versionCode = "10"
         version     = "1.0.0" >
 
-    <plugin name="cordova-plugin-splashscreen" source="npm" version="3.2.1" />
-
     <!-- versionCode is optional and Android only -->
 
     <name>Calculadora</name>
@@ -56,6 +54,8 @@
     <platform name="winphone">
         <icon src="icon.png" width="180" height="180" />
     </platform>
+
+    <plugin name="cordova-plugin-splashscreen" source="npm" version="3.2.1" />
 
     <plugin name="cordova-plugin-whitelist" spec="1.2.1" source="npm" />
     <access origin="*" />

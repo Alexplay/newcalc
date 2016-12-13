@@ -6,6 +6,8 @@ var App = function() {
 	var comp_creacion = 'componentes/creacion.html';
 	var comp_presupuestos = 'componentes/presupuestos.html';
 	var comp_menu = 'componentes/menu.html';
+
+	var checkboxes;
 	
 	var refresh = function() {
 		$('[data-role="page"]').trigger('create');
@@ -29,6 +31,8 @@ var App = function() {
 	};
 	
 	this.init = function() {
+		initPrecios();
+
 		initComponente(inicio, comp_creacion, function() {			
 			initNavegacion();
 			
@@ -37,10 +41,17 @@ var App = function() {
 			});
 
 			initControles();
+			showRecords();
 		});
 		
 		initComponente(presupuestos, comp_presupuestos, function() {
 			initNavegacion();
+		});
+	};
+
+	var initPrecios = function () {
+		$.get('http://adevelca.com/obtener-precios', function (data) {
+			checkboxes = JSON.parse(data);
 		});
 	};
 
@@ -62,7 +73,7 @@ var App = function() {
 
 		suma += complejidad[ $('input[name=check-complejidad]:checked').val() ];
 
-		var checkboxes = {
+		/*var checkboxes = {
 			opciones: {
 				logo: 5000,
 				archivo: 2500,
@@ -105,7 +116,7 @@ var App = function() {
 				publicidad: 5000,
 				correos: 12000
 			}
-		};
+		};*/
 
 		$.each(checkboxes, function (i, valor) {
 			$.each( $('input[name=check-' + i + ']:checked'), function (j, obj) {
@@ -160,8 +171,12 @@ var App = function() {
 		$('form').on('submit', function(ev) {
 			ev.preventDefault();
 
-			$.post('http://adevelca.com/enviar-correo', {email: $('#email-enviar').val(), nombre: $('#presupuesto-guardar').val(), monto: $('#total').val()}, function(html) {
+			$.post('http://adevelca.com/enviar-correo', {email: $('#email-enviar').val(), nombre: $('#presupuesto-guardar').val(), monto: $('#total').val()}, function() {
+				$('#mensaje-envio').show();
 
+				insertRecord($('#presupuesto-guardar').val(), $('#email-enviar').val(), parseFloat($('#total').val()));
+				showRecords();
+				refresh();
 			});
 		});
 	};
