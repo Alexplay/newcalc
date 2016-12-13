@@ -52,3 +52,4 @@ $(document).on('pagechange', function() {
 	var app = new App();
 	app.refreshNavegacion();
 });
+
