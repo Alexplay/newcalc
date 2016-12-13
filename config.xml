@@ -18,14 +18,17 @@
     </author>
 
     <platform name="ios">
+        <splash src="splash.png" />
         <icon src="icon.png" width="180" height="180" />
     </platform>
 
     <platform name="android">
+        <splash src="splash.png" />
         <icon src="icon.png" width="180" height="180" />
     </platform>
 
     <platform name="winphone">
+        <splash src="splash.png" />
         <icon src="icon.png" width="180" height="180" />
     </platform>
 
