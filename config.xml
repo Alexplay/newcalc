@@ -17,7 +17,11 @@
         Angel Alvizu
     </author>
 
-    <splash src="splash.png" />
+
+    <splash src="splash.png" platform="android" qualifier="xhdpi" />
+    <splash src="splash.png" platform="android" qualifier="fr-xhdpi" />
+    <splash src="splash.png" platform="android" qualifier="port-xxhdpi" />
+
 
     <platform name="ios">
         <icon src="icon.png" width="180" height="180" />
