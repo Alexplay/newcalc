@@ -74,6 +74,6 @@ function showRecords() {
 }
 
 $(document).ready(function () {
-    //dropTable();
+    dropTable();
     initDatabase();
 });
