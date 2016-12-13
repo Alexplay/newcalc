@@ -17,7 +17,7 @@
         Angel Alvizu
     </author>
 
-    <!--<platform name="ios">
+    <platform name="ios">
         <icon src="icon.png" width="180" height="180" />
     </platform>
 
@@ -27,6 +27,6 @@
 
     <platform name="winphone">
         <icon src="icon.png" width="180" height="180" />
-    </platform>-->
+    </platform>
 
 </widget>
