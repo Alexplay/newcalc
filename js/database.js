@@ -135,7 +135,7 @@ function showRecords() // Function For Retrive data from Database Display record
 
 $(document).ready(function () // Call function when page is ready for load..
 {
-    initDatabase();
-    insertRecord();
-    showRecords();
+    //initDatabase();
+    //insertRecord();
+    //showRecords();
 });
